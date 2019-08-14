@@ -68,4 +68,7 @@ gem 'figaro'
 
 gem 'aws-sdk'
 
+#for notification banners
+gem 'izitoast'
+
 
