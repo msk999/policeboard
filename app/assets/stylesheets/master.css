@@ -125,6 +125,7 @@ select {
 .cases { line-height: 1.3; list-style: none; margin-left: 0; }
 .cases .details { list-style: none; margin: 0; }
 .cases .details li { color: #999; display: inline; font-size: 14px; margin-right: 1em; }
+.cases .details li strong { color: #0072ad;}
 .cases h3 { font-size: 24px; font-weight: normal; }
 .cases > li { margin-bottom: 1em; }
 .cases p { margin: 0; }

@@ -2,16 +2,16 @@ class CasesController < ApplicationController
   def index
     if params[:search]
       @header = "Search results"
-      @cases = Case.search(params[:search], params[:search_type])
+      @cases = Case.search(params[:search], params[:search_type], page: params[:page])
       @counter = "Matching cases: #{@cases.count(:all)}"
     else
       @header = "Recent cases"
       @cases = Case.where(is_active: true).where.not(defendant_id: nil)
+                   .order('date_initiated IS NULL, date_initiated DESC')
+                   .paginate(page: params[:page])
       @counter = "Total cases: #{@cases.count(:all)}"
-    end
+   end
 
-    @cases = @cases.order('date_initiated IS NULL, date_initiated DESC').paginate(:page => params[:page])
-    byebug
     @cases_per_year = Case.where('date_initiated IS NOT NULL')
       .order('EXTRACT(YEAR from date_initiated)')
       .group('EXTRACT(YEAR from date_initiated)')
