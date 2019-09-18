@@ -36,6 +36,42 @@ ul { list-style: disc; margin-left: 1.5em; }
 .l { float: left; }
 .r { float: right; }
 
+select {
+
+    /* styling */
+    background-color: white;
+    border: thin solid lightgray;
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 2.5em 0.5em 1em;
+
+    /* reset */
+
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  select.classic {
+    background-image:
+      linear-gradient(45deg, transparent 50%, gray 50%),
+      linear-gradient(135deg, #6b6b60 50%, transparent 50%),
+      linear-gradient(to right, transparent 10%, lightgray);
+    background-position:
+      calc(100% - 20px) calc(1em + 2px),
+      calc(100% - 15px) calc(1em + 2px),
+      100% 0;
+    background-size:
+      5px 5px,
+      5px 5px,
+      2.5em 2.5em;
+    background-repeat: no-repeat;
+  }
 
 /* Core layout
 ======================================================================*/
@@ -106,12 +142,12 @@ ul { list-style: disc; margin-left: 1.5em; }
     /* Simple bar */
     .bar-chart td { vertical-align: middle; }
     .bar-chart .value { background: #0072ad; height: 2em; min-width: 1px; }
-    
+
     /* Stacked bar */
     .stacked-bar { height: 2em; white-space: nowrap; }
     .stacked-bar .value { border-right: 2px solid #fff; box-sizing: border-box; color: #fff; display: inline-block; height: 100%; padding-top: 6px; text-align: center; white-space: nowrap; }
     .stacked-bar .fa { color: #fff; }
-    
+
         /* Colors */
         .stacked-bar .agree { background: #0072ad; }
         .stacked-bar .disagree { background: #0a3557; }
@@ -166,7 +202,7 @@ ul { list-style: disc; margin-left: 1.5em; }
     #logo { align-items: center; display: flex; justify-content: space-between; width: 51.92%; }
     #logo-img { display: block; width: 52.7%; }
     #logo-img img { width: 100%; }
-    
+
     #logo-tagline {
         border-left: 1px solid rgba(0, 0, 0, 0.15);
         box-sizing: border-box;
@@ -177,13 +213,13 @@ ul { list-style: disc; margin-left: 1.5em; }
         padding-left: 20px;
         width: 44.25%;
     }
-    
+
     #logo-reverse { display: none; }
-    
+
         /* Home */
         #home #logo-tagline { border-left-color: rgba(255, 255, 255, 0.2); color: rgba(255, 255, 255, 0.7); }
         #home #logo-tagline a { color: #fff; }
-    
+
     /* Menu */
     #menu {
         background: #0072ad;
@@ -197,7 +233,7 @@ ul { list-style: disc; margin-left: 1.5em; }
         width: 250px;
         z-index: 1000;
     }
-    
+
     #menu a { border-bottom: 1px solid rgba(255, 255, 255, 0.1); color: #fff; display: block; padding: 0.8em 1.1em; }
     #menu a:hover { text-decoration: none; }
     #menu li { border-radius: 0; margin: 0; }
@@ -208,7 +244,7 @@ ul { list-style: disc; margin-left: 1.5em; }
     #menu .search { display: block !important; }
     #menu #search-toggle { display: none; }
     #menu ul { list-style: none; margin: 0; }
-        
+
         /* Toggle */
         #nav-toggle {
             background: #0072ad;
@@ -222,13 +258,13 @@ ul { list-style: disc; margin-left: 1.5em; }
             text-transform: uppercase;
             vertical-align: middle;
         }
-        
+
         #nav-toggle:hover { text-decoration: none; }
         #nav-toggle .fa { display: block; font-size: 20px; margin-bottom: -0.1em; }
-        
+
             /* Home page */
             #home #nav-toggle { background: #fff; color: #0072ad; }
-    
+
     /* Navigation */
     #nav { font-size: 19px; font-weight: 300; padding-top: 10px; position: relative; text-align: right; }
     #nav .current a { color: #000; font-weight: 600; }
@@ -239,8 +275,8 @@ ul { list-style: disc; margin-left: 1.5em; }
     #nav-secondary .current a { color: #000; font-weight: 600; }
     #nav-secondary li { display: inline-block; margin-left: 1em; position: relative; }
     #nav-secondary ul { list-style: none; margin: 0; }
-	
-	
+
+
 /* Home */
 #home #header { left: 0; position: absolute; top: 0; width: 100%; }
 #home #logo-full { display: none; }
@@ -326,7 +362,7 @@ ul { list-style: disc; margin-left: 1.5em; }
 
 .tooltip .tooltiptext-top {
   bottom: 100%;
-  left: 50%; 
+  left: 50%;
   margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
 }
 
@@ -368,27 +404,27 @@ ul { list-style: disc; margin-left: 1.5em; }
 @media screen and (max-width: 900px) {
     /* Layout */
     .c3l, .c3m, .c3r { float: none; width: auto; }
-    
+
     /* Content */
         /* Cases */
             /* Case header */
             #case-header .details li { display: block; margin-right: 0; }
             #case-header .highlights { margin: 0; }
             #case-header .highlights li { float: none; padding: 0; width: auto; }
-        
+
         /* Board member header */
         #board-header { padding-left: 0; }
         #board-header .stacked-bar { clear: both; }
         #board-header .thumb { float: right; margin: 0 0 10px 10px; width: 30%; }
-        
+
         /* Forms */
             /* Search */
             #case-search { width: 100%; }
-        
+
         /* Header */
         #header .content { display: block; }
         #logo { width: 80%; }
-        
+
         /* Intro */
         #intro { padding-top: 30%; }
         #intro h1 { font-size: 30px; }
@@ -399,19 +435,19 @@ ul { list-style: disc; margin-left: 1.5em; }
     /* Layout */
     .c2l, .c2r { float: none; width: auto; }
     .content-box { padding: 15px; }
-    
+
     /* Content */
         /* Header */
         #header { padding: 15px 0; }
         #logo { display: block; }
         #logo-img { width: auto; }
         #logo-tagline { border-width: 1px 0 0; font-size: 12px; padding: 5px 0 0; width: auto; }
-        
+
         /* Files */
         .files a { text-align: left; }
         .files .fa { display: inline; font-size: 1em; }
         .files li { float: none; margin-right: 0; width: auto; }
-        
+
         /* Process */
         #process .description, #process .step { float: none; width: auto; }
         #process > li { margin-bottom: 1em; }

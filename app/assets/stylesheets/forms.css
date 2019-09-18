@@ -100,10 +100,9 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 .search label { display: none; }
 .search * { vertical-align: middle; }
 .search button { -webkit-appearance: none; background: none; border: 0; color: #505050; cursor: pointer; font-size: 16px; margin-right: -2em; padding: 0.5em 0; width: 3em; }
-.search .txt { border: 0; box-shadow: none; margin: 0; padding: 0.5em; text-indent: 0.6em; width: 100%; }
-
+.search .txt { border: 0; box-shadow: none; margin: 0; padding: 0.5em; text-indent: 0.6em; width: 58%; }
     /* Cases landing */
-    #case-search { font-size: 24px; width: 60%; }
+    #case-search {font-size: 24px;width: 75%;}
 
     /* In navigation */
     #nav .search { position: absolute; right: 0; top: 2em; width: 10em; }
