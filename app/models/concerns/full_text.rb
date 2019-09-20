@@ -51,7 +51,7 @@ module FullText
       'SELECT id, '\
         "ts_headline('english', search_text, "\
         "#{keywords_to_query}"\
-        ", 'StartSel = <strong> , StopSel = </strong>, MinWords=1, MaxWords=10, MaxFragments=1,ShortWord=2') as search_text "\
+        ", 'StartSel = <strong> , StopSel = </strong>, MinWords=1, MaxWords=45, MaxFragments=1,ShortWord=2') as search_text "\
         "FROM "\
         "(SELECT cases.id, string_agg(ctf.search_text::text, ' ') as search_text "\
           "FROM cases INNER JOIN case_text_files ctf ON cases.id = ctf.case_id "\
