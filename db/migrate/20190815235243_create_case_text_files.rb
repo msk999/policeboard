@@ -40,11 +40,6 @@ class CreateCaseTextFiles < ActiveRecord::Migration
       end
     end
   end
-# my_file = cs.files.first
-# my_file.cache_stored_file!
-# my_file.retrieve_from_cache!(my_file.cache_name)
-# reader = PDF::Reader.new(my_file.file.file)
-#   end
 
   def pdf_to_text(file)
     reader = PDF::Reader.new(file)
