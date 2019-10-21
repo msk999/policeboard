@@ -3,13 +3,13 @@ class CasesController < ApplicationController
     if params[:search]
       @header = "Search results"
       @cases = Case.search(params[:search], params[:search_type], page: params[:page])
-      @counter = "Matching cases: #{@cases.count(:all)}"
+      @counter = "Matching cases: #{@cases.count}"
     else
       @header = "Recent cases"
       @cases = Case.where(is_active: true).where.not(defendant_id: nil)
                    .order('date_initiated IS NULL, date_initiated DESC')
                    .paginate(page: params[:page])
-      @counter = "Total cases: #{@cases.count(:all)}"
+      @counter = "Total cases: #{@cases.count}"
    end
 
     @cases_per_year = Case.where('date_initiated IS NOT NULL')
