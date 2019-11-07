@@ -26,6 +26,12 @@
 .env
 
 public/**/**
+.byebug_history
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
 
 
 # Ignore application configuration
