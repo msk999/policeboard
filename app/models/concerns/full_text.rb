@@ -12,9 +12,9 @@ module FullText
 
       search_results.each do |record|
         id = record['id'].to_i
+
         case_item = Case
                 .joins(:defendant)
-                .where(is_active:true)
                 .where.not(defendant_id: nil)
                 .order('date_initiated IS NULL, date_initiated DESC')
                 .find id

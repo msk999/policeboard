@@ -8,7 +8,7 @@ class CreateCaseTextFiles < ActiveRecord::Migration
       t.timestamps null: false
     end
 
-    store_pdf_to_case_text_file
+    # store_pdf_to_case_text_file
 
     execute <<-SQL
       CREATE INDEX case_text_files_search_idx
