@@ -6,7 +6,7 @@ module FullText
       @per_page = options['per_page'] || 10
     end
 
-    def build_case_list(
+    def build_case_list
       @cases = []
       search_results = text_search
 
