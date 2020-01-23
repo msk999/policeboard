@@ -6,20 +6,23 @@ module FullText
       @per_page = options['per_page'] || 10
     end
 
-    def build_case_list
+    def build_case_list(
       @cases = []
       search_results = text_search
 
       search_results.each do |record|
         id = record['id'].to_i
 
-        case_item = Case
-                .joins(:defendant)
-                .where.not(defendant_id: nil)
-                .order('date_initiated IS NULL, date_initiated DESC')
-                .find id
+        begin
+          case_item = Case
+                  .joins(:defendant)
+                  .where.not(defendant_id: nil)
+                  .order('date_initiated IS NULL, date_initiated DESC')
+                  .find id
 
-        continue unless case_item
+          rescue ActiveRecord::RecordNotFound
+        end
+        next unless case_item
 
         case_item.search_text = record['search_text']
         @cases << case_item
